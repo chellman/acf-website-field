@@ -35,6 +35,7 @@ class acf_website_field_plugin
 		// version 4+
 		add_action('acf/register_fields', array($this, 'register_fields'));
 
+		add_action( 'admin_enqueue_scripts', array( $this, 'register_admin_styles' ) );
 
 	}
 
@@ -52,6 +53,13 @@ class acf_website_field_plugin
 		include_once('website_url.php');
 	}
 
+
+	/**
+	 * Registers and enqueues admin-specific styles.
+	 */
+	public function register_admin_styles() {
+		wp_enqueue_style( 'acf-website-field', plugins_url( 'acf-website-field/acf-website-field.css' ) );
+	} // end register_admin_styles
 
 }
 

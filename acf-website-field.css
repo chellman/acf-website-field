@@ -1,0 +1,8 @@
+.form-table .field_type-website th,
+.form-table .field_type-website td {
+	padding: 10px;
+}
+
+.form-table .field_type-website tbody td {
+	vertical-align: top;
+}

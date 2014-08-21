@@ -92,7 +92,10 @@ class Website_field extends acf_Field
 			//If show title
 			if($website_title==1 && !empty($value['title'])){ $title = $value['title'];}else{$title = $the_url;};
 
-			$value ='<a href="http://'.$the_url.'" '.$external.'>'.$title.'</a>';
+			// if the URL excludes the http://, add it
+			if (strpos($the_url, 'http://') !== 0) $the_url = 'http://' . $the_url;
+
+			$value ='<a href="'.$the_url.'" '.$external.'>'.$title.'</a>';
 
 
 			// return link
